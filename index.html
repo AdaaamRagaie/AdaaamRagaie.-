@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هايبر مصر | كل احتياجاتك في مكان واحد</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="top-header">
+    <div class="container header-content">
+      <a href="#" class="logo">
+        <span class="logo-icon">🛒</span>
+        <span>هايبر <b>مصر</b></span>
+      </a>
+
+      <div class="search-box">
+        <input type="search" id="searchInput" placeholder="ابحث عن منتج..." aria-label="البحث عن منتج">
+        <button onclick="searchProducts()">بحث 🔍</button>
+      </div>
+
+      <button class="cart-button" onclick="openCart()">
+        🛒 السلة <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <div class="container nav-content">
+      <a href="#home">الرئيسية</a>
+      <a href="#categories">الأقسام</a>
+      <a href="#offers">العروض</a>
+      <a href="#products">المنتجات</a>
+      <a href="#contact">تواصل معنا</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div>
+          <span class="offer-label">عروض مميزة كل يوم</span>
+          <h1>كل احتياجات بيتك<br><span>في مكان واحد</span></h1>
+          <p>اكتشف أفضل المنتجات بأفضل الأسعار مع هايبر مصر.</p>
+          <a href="#products" class="primary-button">تسوق الآن</a>
+        </div>
+        <div class="hero-illustration">🛍️</div>
+      </div>
+    </section>
+
+    <section class="section container" id="categories">
+      <div class="section-title">
+        <h2>تسوق حسب القسم</h2>
+        <p>اضغط على القسم لعرض منتجاته</p>
+      </div>
+
+      <div class="categories">
+        <div class="category-card" data-category="vegetables">
+          🥦
+          <h3>الخضروات والفاكهة</h3>
+        </div>
+
+        <div class="category-card" data-category="meat">
+          🥩
+          <h3>اللحوم والدواجن</h3>
+        </div>
+
+        <div class="category-card" data-category="dairy">
+          🥛
+          <h3>الألبان والجبن</h3>
+        </div>
+
+        <div class="category-card" data-category="bakery">
+          🍪
+          <h3>المخبوزات والحلويات</h3>
+        </div>
+
+        <div class="category-card" data-category="cleaning">
+          🧴
+          <h3>العناية والمنظفات</h3>
+        </div>
+
+        <div class="category-card" data-category="home">
+          🏠
+          <h3>الأدوات المنزلية</h3>
+        </div>
+      </div>
+    </section>
+
+    <section class="offers-section" id="offers">
+      <div class="container offer-content">
+        <div>
+          <span>عرض الأسبوع</span>
+          <h2>خصم يصل إلى 40%</h2>
+          <p>على مجموعة مختارة من المنتجات</p>
+          <a href="#products" class="light-button">شاهد العروض</a>
+        </div>
+        <div class="offer-emoji">🎁</div>
+      </div>
+    </section>
+
+    <section class="section container" id="products">
+      <div class="section-title">
+        <h2 id="productsTitle">منتجات مميزة</h2>
+        <p>منتجات عالية الجودة بأسعار مناسبة</p>
+        <button class="show-all-button" onclick="showAllProducts()">عرض كل المنتجات</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <article class="product-card" data-name="أرز مصري فاخر" data-category="food">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=600&q=80" alt="أرز مصري فاخر">
+          </div>
+          <span class="product-tag">الأكثر مبيعاً</span>
+          <h3>أرز مصري فاخر 1 كجم</h3>
+          <div class="rating">★★★★★</div>
+          <div class="product-footer">
+            <strong>35 جنيه</strong>
+            <button onclick="addToCart('أرز مصري فاخر 1 كجم', 35)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="زيت عباد الشمس" data-category="food">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=600&q=80" alt="زيت عباد الشمس">
+          </div>
+          <span class="product-tag">عرض خاص</span>
+          <h3>زيت عباد الشمس 1 لتر</h3>
+          <div class="rating">★★★★☆</div>
+          <div class="product-footer">
+            <strong>75 جنيه</strong>
+            <button onclick="addToCart('زيت عباد الشمس 1 لتر', 75)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="لبن كامل الدسم" data-category="dairy">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=600&q=80" alt="لبن كامل الدسم">
+          </div>
+          <span class="product-tag">طازج</span>
+          <h3>لبن كامل الدسم 1 لتر</h3>
+          <div class="rating">★★★★★</div>
+          <div class="product-footer">
+            <strong>42 جنيه</strong>
+            <button onclick="addToCart('لبن كامل الدسم 1 لتر', 42)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="منظف ملابس" data-category="cleaning">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1585832770485-e68a5dbfad52?auto=format&fit=crop&w=600&q=80" alt="منظف ملابس">
+          </div>
+          <span class="product-tag">خصم 20%</span>
+          <h3>منظف ملابس 2.5 كجم</h3>
+          <div class="rating">★★★★☆</div>
+          <div class="product-footer">
+            <strong>120 جنيه</strong>
+            <button onclick="addToCart('منظف ملابس 2.5 كجم', 120)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="تفاح أحمر" data-category="vegetables">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=600&q=80" alt="تفاح أحمر">
+          </div>
+          <span class="product-tag">طازج</span>
+          <h3>تفاح أحمر 1 كجم</h3>
+          <div class="rating">★★★★★</div>
+          <div class="product-footer">
+            <strong>65 جنيه</strong>
+            <button onclick="addToCart('تفاح أحمر 1 كجم', 65)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="طماطم طازة" data-category="vegetables">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=600&q=80" alt="طماطم طازة">
+          </div>
+          <span class="product-tag">عرض اليوم</span>
+          <h3>طماطم طازة 1 كجم</h3>
+          <div class="rating">★★★★★</div>
+          <div class="product-footer">
+            <strong>20 جنيه</strong>
+            <button onclick="addToCart('طماطم طازة 1 كجم', 20)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="دجاجة كاملة" data-category="meat">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80" alt="دجاجة كاملة">
+          </div>
+          <span class="product-tag">جودة عالية</span>
+          <h3>دجاجة كاملة طازجة</h3>
+          <div class="rating">★★★★☆</div>
+          <div class="product-footer">
+            <strong>145 جنيه</strong>
+            <button onclick="addToCart('دجاجة كاملة طازجة', 145)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="جبنة بيضاء" data-category="dairy">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&w=600&q=80" alt="جبنة بيضاء">
+          </div>
+          <span class="product-tag">الأكثر طلباً</span>
+          <h3>جبنة بيضاء 500 جرام</h3>
+          <div class="rating">★★★★★</div>
+          <div class="product-footer">
+            <strong>85 جنيه</strong>
+            <button onclick="addToCart('جبنة بيضاء 500 جرام', 85)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="كيك شوكولاتة" data-category="bakery">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=600&q=80" alt="كيك شوكولاتة">
+          </div>
+          <span class="product-tag">جديد</span>
+          <h3>كيك شوكولاتة كبير</h3>
+          <div class="rating">★★★★★</div>
+          <div class="product-footer">
+            <strong>110 جنيه</strong>
+            <button onclick="addToCart('كيك شوكولاتة كبير', 110)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="سائل أطباق" data-category="cleaning">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80" alt="سائل أطباق">
+          </div>
+          <span class="product-tag">خصم خاص</span>
+          <h3>سائل أطباق 1 لتر</h3>
+          <div class="rating">★★★★☆</div>
+          <div class="product-footer">
+            <strong>55 جنيه</strong>
+            <button onclick="addToCart('سائل أطباق 1 لتر', 55)">أضف للسلة</button>
+          </div>
+        </article>
+
+        <article class="product-card" data-name="طقم حلل" data-category="home">
+          <div class="product-image">
+            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="طقم حلل">
+          </div>
+          <span class="product-tag">عرض خاص</span>
+          <h3>طقم حلل منزلي</h3>
+          <div class="rating">★★★★☆</div>
+          <div class="product-footer">
+            <strong>650 جنيه</strong>
+            <button onclick="addToCart('طقم حلل منزلي', 650)">أضف للسلة</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container features-grid">
+        <div><span>🚚</span><h3>توصيل سريع</h3><p>توصيل لباب البيت</p></div>
+        <div><span>💳</span><h3>دفع آمن</h3><p>طرق دفع متعددة</p></div>
+        <div><span>✅</span><h3>جودة مضمونة</h3><p>أفضل المنتجات</p></div>
+        <div><span>📞</span><h3>خدمة العملاء</h3><p>متاحون لمساعدتك</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container footer-content">
+      <div>
+        <a href="#" class="logo footer-logo">🛒 هايبر <b>مصر</b></a>
+        <p>كل احتياجاتك اليومية بجودة عالية وأسعار مناسبة.</p>
+      </div>
+      <div>
+        <h3>تواصل معنا</h3>
+        <p>📞 01011634526</p>
+        <p>✉️ adammoustafa607@gmail.com</p>
+      </div>
+      <div>
+        <h3>تابعنا</h3>
+        <p class="socials">Facebook &nbsp; Instagram &nbsp; WhatsApp</p>
+      </div>
+    </div>
+    <div class="copyright">© 2025 هايبر مصر - جميع الحقوق محفوظة</div>
+  </footer>
+
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-box">
+      <button class="close-button" onclick="closeCart()">×</button>
+      <h2>🛒 سلة التسوق</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total">الإجمالي: <strong id="cartTotal">0</strong> جنيه</div>
+      <button class="checkout-button" onclick="checkout()">إتمام الطلب</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
